@@ -1,0 +1,16 @@
+import sys, json, warnings; warnings.filterwarnings('ignore'); sys.path.insert(0,'/home/claude/work')
+from tune import grid, score
+steps={}
+b1=grid({}, dict(sw=[0.05,0.072,0.1], ss_mid=[4,6,8,11,15], ss_late=[2,3,5,8]))
+b1=grid(b1[1], dict(blown_pen=[0.0,0.25,0.5,0.75]))
+steps['S1_smooth_tuned']=b1[1]; print('S1',b1)
+b3=grid(dict(b1[1],shrink=True), dict(k_shrink=[2,3,4,6,10]))
+steps['S3_shrink']=b3[1]; print('S3',b3)
+b4=grid(b3[1], dict(lev_n=[0.5,0.75,1.0,1.25,1.5], smin_q=[0.0,0.01,0.02,0.05,0.1]))
+b4=grid(b4[1], dict(sw=[b4[1]['sw']*m for m in [0.5,0.75,1,1.5,2]], k_shrink=[1,2,3,4,6]))
+steps['S4_leverage']=b4[1]; print('S4',b4)
+b4n1=grid(dict(b3[1],lev_n=1.0), dict(smin_q=[0.0,0.01,0.02,0.05,0.1], sw=[0.02,0.03,0.04,0.054,0.072]))
+steps['S4_leverage_n1']=b4n1[1]; print('S4 n=1',b4n1)
+bz=grid(dict(b4n1[1],blend='z'), dict(z0=[1,2,4,8,16], ss_mid=[4,8,15,31]))
+steps['S5_blend']=bz[1]; print('S5',bz)
+json.dump(steps, open('steps2.json','w'), indent=1)

@@ -1,0 +1,48 @@
+{
+ "S1_smooth_tuned": {
+  "sw": 0.05,
+  "ss_mid": 4,
+  "ss_late": 8,
+  "blown_pen": 0.75
+ },
+ "S3_shrink": {
+  "sw": 0.05,
+  "ss_mid": 4,
+  "ss_late": 8,
+  "blown_pen": 0.75,
+  "shrink": true,
+  "k_shrink": 6
+ },
+ "S4_leverage": {
+  "sw": 0.025,
+  "ss_mid": 4,
+  "ss_late": 8,
+  "blown_pen": 0.75,
+  "shrink": true,
+  "k_shrink": 6,
+  "lev_n": 1.0,
+  "smin_q": 0.01
+ },
+ "S4_leverage_n1": {
+  "sw": 0.03,
+  "ss_mid": 4,
+  "ss_late": 8,
+  "blown_pen": 0.75,
+  "shrink": true,
+  "k_shrink": 6,
+  "lev_n": 1.0,
+  "smin_q": 0.01
+ },
+ "S5_blend": {
+  "sw": 0.03,
+  "ss_mid": 15,
+  "ss_late": 8,
+  "blown_pen": 0.75,
+  "shrink": true,
+  "k_shrink": 6,
+  "lev_n": 1.0,
+  "smin_q": 0.01,
+  "blend": "z",
+  "z0": 8
+ }
+}
