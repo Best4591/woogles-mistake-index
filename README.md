@@ -4,7 +4,7 @@
 to attempt to refine Joey Krafchick's mistake index grading.
 Five different changes were tested against the current mistake index
 to see if they tracked player ratings and future results better, and
-mistake-timing luck has also 
+a note on mistake-timing luck is also included.
 
 ## Write-up
 
