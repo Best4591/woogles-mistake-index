@@ -8,7 +8,7 @@ a note on mistake-timing luck is also included.
 
 ## Write-up
 
-Read the full findings in [Improving the Woogles Mistake Index](Improving the Woogles Mistake Index.md).
+Read the full findings in [Improving the Woogles Mistake Index](mistake_index_analysis/Improving%20the%20Woogles%20Mistake%20Index.md).
 
 ## What's in this repository
 
