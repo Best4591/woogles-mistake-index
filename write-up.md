@@ -104,7 +104,9 @@ Pre-endgame and endgame turns are solved exactly, so they have no simulation noi
 
 The new model raises the per-game correlation with rating from 0.693 to 0.754 on held-out players (+0.061, 95% CI +0.054 to +0.070). Each step except the spread blend adds a significant amount, and leverage and smoothing carry most of it.
 
-&#91;embedded content: Woogles league games, CSW/NWL/Deutsch, 7,626 games · held-out test players · bootstrap over players\]
+![Gain in per-game correlation with rating by model step](chart-rating.png)
+
+*Woogles league games, CSW/NWL/Deutsch, 7,626 games · held-out test players · bootstrap over players*
 
 Steps are cumulative. Phase weights are measured against the leverage stage, not the spread blend, which was dropped. Swapping the tuning and test halves and re-tuning from scratch gave +0.057 (CI +0.049 to +0.065), with similar parameters.
 
@@ -120,7 +122,9 @@ Per game, the gain is significant in every lexicon. Averaged over a player's 20+
 
 Predicting the winner from each player's previous game, noise shrinkage plus leverage raises the AUC from 0.602 to 0.609 (+0.007, CI +0.002 to +0.013). The gain stays significant up to 5 earlier games and fades by 10, when both versions have averaged out their noise.
 
-&#91;embedded content: Woogles league games, CSW/NWL/Deutsch · earlier games by start time · bootstrap over divisions\]
+![AUC gain over the current index by number of earlier games used](chart-results.png)
+
+*Woogles league games, CSW/NWL/Deutsch · earlier games by start time · bootstrap over divisions*
 
 The smooth curve on its own is within noise on results. The two optional steps behave differently from the rating test: the spread blend is the best stage in every column, but only 0.001–0.003 above leverage alone, and phase weights add nothing. Spread correlation shows the same pattern more strongly: from one earlier game, the final model raises it from 0.243 to 0.274 (+0.031, CI +0.020 to +0.042).
 
